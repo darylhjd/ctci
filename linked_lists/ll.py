@@ -4,6 +4,17 @@ class SLNode:
         self.data = data
         self.next = None
 
+    def __str__(self):
+        return f"Node: {self.data} at {id(self)}"
+
+    def __eq__(self, other):
+        if not isinstance(other, type(self)):
+            return NotImplemented
+        return self is other and self.data == other.data
+
+    def __hash__(self):
+        return hash((self.data, id(self.next)))
+
 
 class SLL:
     def __init__(self):
@@ -41,6 +52,14 @@ class SLL:
             temp = temp.next
         d.append("None")
         return " -> ".join(d)
+
+    def __len__(self):
+        length = 0
+        temp = self.head
+        while temp:
+            length += 1
+            temp = temp.next
+        return length
 
 
 class DLNode:

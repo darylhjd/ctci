@@ -4,7 +4,7 @@ from ll import *
 def sum_lists(l1, l2):
     """Sum two lists whose numbers are stored in reverse order (1s-digit first) in a linked list, and store
     the result in a linked list in the same order."""
-    # Solution: O(max(l1, l2)) time, O(1) space.
+    # Solution: O(max(ll1, ll2)) time, O(1) space.
     new_ll = SLL()
     carry = 0
     onei = l1.head
@@ -21,14 +21,14 @@ def sum_lists(l1, l2):
 def sum_lists_reversed(l1: SLL, l2: SLL):
     """Sum two lists whose numbers are stored in order in a linked list, and store
     the result in a linked list in the same order"""
-    # Solution: O(max(l1, l2)) time to loop through each list.
+    # Solution: O(max(ll1, ll2)) time to loop through each list.
 
     # Pad the shorter list with zeros at the beginning
     if l1.length >= l2.length:
-        # Pad l2 with zeros
+        # Pad ll2 with zeros
         pad_zeros(l2, l1.length - l2.length)
     else:
-        # Pad l1 with zeros
+        # Pad ll1 with zeros
         pad_zeros(l1, l2.length - l1.length)
 
     # Then we have to calculate the total manually.
