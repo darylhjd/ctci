@@ -7,7 +7,8 @@ class MyQueue:
         self.last_op_deq = False
 
     def enqueue(self, data):
-        # Enqueueing is simple where we just add to the end of stack_one
+        # Solution: O(1) time mostly.
+        # Enqueueing is simple where we just add to the end of the relevant stack.
 
         # We check whether the last operation was a dequeue. If yes, then we move the items back to main stack.
         if self.last_op_deq:
@@ -18,19 +19,19 @@ class MyQueue:
         self.stack_one.append(data)
 
     def dequeue(self):
-        # To dequeue, we have to pop everything from the stack and push it into stack_two.
-        # Then we return the top element from stack_two, and re-push everything back to stack_one.
-
+        # Solution: O(1) time mostly.
         # Check for length and last operation.
         if (self.last_op_deq and len(self.stack_two) == 0) or (not self.last_op_deq and len(self.stack_one) == 0):
             raise IndexError("no items in queue")
 
         # If the last operation was not a dequeue, then we move the items to the other stack.
         if not self.last_op_deq:
+            # To dequeue, we have to pop everything from the stack and push it into stack_two.
             while len(self.stack_one):
                 self.stack_two.append(self.stack_one.pop())
             self.last_op_deq = True
 
+        # Then we return the top element from stack_two, and re-push everything back to stack_one.
         # We do not move the items back in case user dequeues multiple times.
         return self.stack_two.pop()
 

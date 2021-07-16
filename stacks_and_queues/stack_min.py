@@ -3,7 +3,10 @@ class MinStack:
     Like any other stack, Push, Pop operations are also done in O(1) time."""
     def __init__(self):
         # It is important to realise that there is no way of implementing the min function
-        # without the use of additional space.
+        # without the use of additional space. In this case, the solution is as so:
+        # Solution: O(1) time for methods, O(n) space for storing minimums, worst case is if each successive inserted
+        # node is less than the top.
+
         # What we can then do is to use another stack to keep track of the minimum nodes as they are added.
         # If a minimum node is removed, it is popped from the stack keeping track of the minimums.
         self.minimums = []

@@ -22,6 +22,7 @@ class Stack:
 
 def sort_stack(s: Stack):
     """Sort a stack with the smallest elements at the top."""
+    # Solution: O(n^2) time if the original stack was in reversed sorted order, O(n) extra space.
     # Return if stack is empty.
     if len(s) == 0:
         return
