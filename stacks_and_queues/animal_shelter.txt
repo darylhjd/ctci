@@ -1,0 +1,7 @@
+The solution here is to keep 2 separate queues for Dogs and Cats, and store a timestamp for each animal
+that was added to the shelter.
+
+When we want to remove a particular animal type, we can just dequeue from the relevant animal queue, and if we just want
+to take out the oldest animal, we can compare the timestamps for the Dog and Cat queue and remove the older animal.
+
+This solution will help to decrease the amount of iteration through any sort of data structure.

@@ -1,0 +1,3 @@
+Implement by fixed division to allocate equal space for each stack.
+
+Implement but flexible division in the case that some stacks are empty while other are full.
