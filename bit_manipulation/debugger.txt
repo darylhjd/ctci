@@ -1,0 +1,14 @@
+By AND-ing 2 numbers together and checking if the result is 0, 
+we are trying to see if the 2 numbers share the same 1s positions.
+If the result is NOT 0, then they have positions where 1s are in the same position.
+
+Now consider n
+Let n have the form abcdef...
+If n has 1 for LSB, then n would be abcdef1, if we minus 1, then n-1 has form abcdef0
+If n has trailing zeros, then n would be abcdef10000, if we minus 1, n - 1 has form abcdef01111
+
+Now, we AND n and n-1 together. Notice that the abcdef bits are the same, so they would definitely
+not be zero. Therefore, if n & (n-1) == 0, we show that abcdef must be 0.
+
+Thus, n is of the form 0...010000, which is a power of 2.
+Hence, the check n & (n-1) == 0 checks if n is a power of 2.
