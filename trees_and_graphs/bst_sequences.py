@@ -1,3 +1,6 @@
+from tree import *
+
+
 def bst_sequences(root):
     """Print all arrays that gives the provided tree."""
     # Solution: O(2^d) where d is the depth of the tree.
@@ -23,37 +26,25 @@ def bst_sequences(root):
     return sequences
 
 
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.left = None
-        self.right = None
-
-    def __str__(self):
-        return f"Node: {self.data}"
-
-    __repr__ = __str__
-
-
 if __name__ == '__main__':
-    root = Node(5)
-    root.left = Node(4)
-    root.left.left = Node(3)
-    root.left.right = Node(2)
-    root.right = Node(8)
-    root.right.right = Node(9)
-    root.right.right.left = Node(10)
-    root.right.right.right = Node(11)
-    root.right.right.left.left = Node(12)
-    root.right.right.left.right = Node(13)
-    root.right.right.left.right.right = Node(14)
+    root = BTNode(5)
+    root.left = BTNode(4)
+    root.left.left = BTNode(3)
+    root.left.right = BTNode(2)
+    root.right = BTNode(8)
+    root.right.right = BTNode(9)
+    root.right.right.left = BTNode(10)
+    root.right.right.right = BTNode(11)
+    root.right.right.left.left = BTNode(12)
+    root.right.right.left.right = BTNode(13)
+    root.right.right.left.right.right = BTNode(14)
 
     print(bst_sequences(root))
 
-    root = Node(1)
-    root.left = Node(2)
-    root.right = Node(3)
-    root.left.right = Node(4)
-    root.left.left = Node(5)
+    root = BTNode(1)
+    root.left = BTNode(2)
+    root.right = BTNode(3)
+    root.left.right = BTNode(4)
+    root.left.left = BTNode(5)
 
     print(bst_sequences(root))

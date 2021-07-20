@@ -1,3 +1,6 @@
+from tree import *
+
+
 def first_common_ancestor(n1, n2):
     """Find the first common ancestor for 2 nodes in a binary tree.
     Avoid storing additional nodes in any data structure."""
@@ -75,29 +78,18 @@ def dfs_number_return(root, n1, n2):
     return None, result
 
 
-class Node:
-    def __init__(self, data):
-        self.data = data
-        self.left = None
-        self.right = None
-
-    def __str__(self):
-        return f"Node: {self.data}"
-
-    __repr__ = __str__
-
 
 if __name__ == '__main__':
-    root = Node(5)
-    root.left = Node(4)
-    root.left.left = Node(3)
-    root.left.right = Node(2)
-    root.right = Node(8)
-    root.right.right = Node(9)
-    root.right.right.left = Node(10)
-    root.right.right.right = Node(11)
-    root.right.right.left.left = Node(12)
-    root.right.right.left.right = Node(13)
-    root.right.right.left.right.right = Node(14)
+    root = BTNode(5)
+    root.left = BTNode(4)
+    root.left.left = BTNode(3)
+    root.left.right = BTNode(2)
+    root.right = BTNode(8)
+    root.right.right = BTNode(9)
+    root.right.right.left = BTNode(10)
+    root.right.right.right = BTNode(11)
+    root.right.right.left.left = BTNode(12)
+    root.right.right.left.right = BTNode(13)
+    root.right.right.left.right.right = BTNode(14)
 
     print(first_common_ancestor_no_parent(root, root.right.right.left.left, root.right.right.left.right.right))
